@@ -1,12 +1,14 @@
 import io
 import uvicorn
 import numpy as np
+import json
 from PIL import Image
 from fastapi import FastAPI, File, UploadFile, Form
 from fastapi.middleware.cors import CORSMiddleware
 from langchain_community.vectorstores import FAISS
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_core.prompts import PromptTemplate
+from langchain_core.documents import Document
 from langchain.chat_models import init_chat_model
 import tensorflow as tf
 import importlib
@@ -28,6 +30,7 @@ mistral_key = os.getenv("MISTRAL_API_KEY")
 FAISS_STORE_PATH = "faiss_index"
 EMBED_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
 MISTRAL_MODEL = "mistral-small-latest"  # Or mistral-small-latest
+KBASE_FILE = "kbase.json"
 
 MODEL_PATHS = {
     "Wheat": "models/wheat_cnn.h5",
@@ -57,14 +60,54 @@ app.add_middleware(
 )
 
 
+# -------------------
+# BUILD FAISS INDEX
+# -------------------
+def build_faiss_index():
+    """Build FAISS index from knowledge base."""
+    print("🔨 Building FAISS index from knowledge base...")
+    
+    # Load knowledge base
+    with open(KBASE_FILE, "r", encoding="utf-8") as f:
+        data = json.load(f)["knowledge_base"]
+    
+    # Convert to LangChain Documents
+    documents = []
+    for item in data:
+        text = (
+            f"Crop: {item['crop']}\n"
+            f"Disease: {item['disease']}\n"
+            f"Symptoms: {item['symptoms']}\n"
+            f"Causes: {item['causes']}\n"
+            f"Treatment: {item['treatment']}\n"
+            f"Prevention: {item['prevention']}"
+        )
+        metadata = {"crop": item["crop"], "disease": item["disease"]}
+        documents.append(Document(page_content=text, metadata=metadata))
+    
+    # Create embeddings and FAISS store
+    embeddings = HuggingFaceEmbeddings(model_name=EMBED_MODEL)
+    vector_store = FAISS.from_documents(documents, embeddings)
+    
+    # Save FAISS index
+    vector_store.save_local(FAISS_STORE_PATH)
+    print(f"✅ FAISS index built and saved to {FAISS_STORE_PATH}")
+    
+    return embeddings, vector_store
 
-# Load embeddings & vectorstore
+
+# Load embeddings & vectorstore (build on startup if needed)
 embeddings = HuggingFaceEmbeddings(model_name=EMBED_MODEL)
-vector_store = FAISS.load_local(
-    FAISS_STORE_PATH,
-    embeddings,
-    allow_dangerous_deserialization=True
-)
+if os.path.exists(FAISS_STORE_PATH):
+    print(f"📂 Loading existing FAISS index from {FAISS_STORE_PATH}")
+    vector_store = FAISS.load_local(
+        FAISS_STORE_PATH,
+        embeddings,
+        allow_dangerous_deserialization=True
+    )
+else:
+    print(f"⚠️  FAISS index not found. Building from scratch...")
+    embeddings, vector_store = build_faiss_index()
 
 # Load Mistral API LLM
 llm = init_chat_model(MISTRAL_MODEL, model_provider="mistralai")
