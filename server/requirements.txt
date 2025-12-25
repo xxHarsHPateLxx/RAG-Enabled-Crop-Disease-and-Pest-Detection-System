@@ -1,0 +1,15 @@
+fastapi
+uvicorn[standard]
+pillow
+numpy
+tensorflow-cpu
+faiss-cpu
+langchain
+langchain-community
+langchain-mistralai
+sentence-transformers
+mistralai
+huggingface-hub
+pydantic
+python-multipart
+python-dotenv

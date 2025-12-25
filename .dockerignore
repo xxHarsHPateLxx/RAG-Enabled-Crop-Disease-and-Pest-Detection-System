@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Git
+.git/
+.gitignore
+
+# Environment variables
+.env
+.env.local
+
+# Client/Frontend files
+client/
+node_modules/
+
+# Documentation
+README.md
+.github/
+
+# Test files
+*_test.py
+test_*.py
+
+# macOS
+.DS_Store
