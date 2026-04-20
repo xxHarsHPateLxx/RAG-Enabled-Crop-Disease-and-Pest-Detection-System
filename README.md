@@ -4,8 +4,10 @@ An end-to-end AI diagnostic tool for crop disease detection using CNN models and
 
 ## 🌾 Features
 
-- **CNN-based Disease Detection**: Deep learning models for Wheat, Rice, and Maize
-- **RAG System**: Retrieval-Augmented Generation for personalized treatment advice
+- **Multimodal Disease Detection**: Optional vision-language model support with CNN fallback for Wheat, Rice, and Maize
+- **Agentic RAG System**: Retrieval-Augmented Generation that can refine its search before answering
+- **Conversation Memory**: Session-aware follow-up questions and diagnosis history
+- **Structured Reasoning**: Internal severity, confidence, and intervention assessment before advice generation
 - **Real-time Analysis**: Fast image processing and prediction
 - **User-Friendly Interface**: Modern React-based web interface
 - **Mobile Support**: Camera capture support for mobile devices
@@ -20,16 +22,18 @@ An end-to-end AI diagnostic tool for crop disease detection using CNN models and
 
 ### Backend (`/server`)
 - FastAPI server
+- Optional multimodal vision model adapter with CNN fallback
 - TensorFlow CNN models (224x224 input)
 - FAISS vector store for knowledge base
-- Mistral AI for treatment generation
+- Ollama Cloud models for structured reasoning, retrieval planning, treatment generation, and multimodal image analysis
+- Session memory store for follow-up conversations
 - LangChain for RAG orchestration
 
 ## 📋 Prerequisites
 
 - Python 3.10+
 - Node.js 18+
-- Mistral AI API key
+- Ollama Cloud API key
 
 ## 🚀 Setup & Installation
 
@@ -50,17 +54,27 @@ pip install -r requirements.txt
 cp .env.example .env
 ```
 
-4. Add your Mistral API key to `.env`:
+4. Add your Ollama API key to `.env`:
 ```
-MISTRAL_API_KEY=your_api_key_here
+OLLAMA_API_KEY=your_api_key_here
 ```
 
-5. Initialize FAISS vector store (first time only):
+5. Configure Ollama Cloud for both text and multimodal analysis:
+```
+TEXT_LLM_PROVIDER=ollama
+TEXT_LLM_MODEL=deepseek-v3.2:cloud
+TEXT_LLM_BASE_URL=https://ollama.com/api
+VISION_LLM_PROVIDER=ollama
+VISION_LLM_BASE_URL=https://ollama.com/api
+VISION_LLM_MODEL=gemini-3-flash-preview:cloud
+```
+
+6. Initialize FAISS vector store (first time only):
 ```bash
 python vectorize_kbase.py
 ```
 
-6. Run the server:
+7. Run the server:
 ```bash
 python main.py
 ```
@@ -151,16 +165,44 @@ Upload crop image and get disease prediction with treatment advice.
 **Response:**
 ```json
 {
+  "session_id": "d7b5c1d4-0b8d-4a6d-9a2e-4c5fd5c3b1f1",
   "crop": "Wheat",
   "disease": "Brown Rust",
   "confidence": 0.95,
-  "advice": "Treatment recommendations..."
+  "analysis_source": "multimodal_llm",
+  "reasoning": {
+    "severity_assessment": "high",
+    "confidence_band": "high",
+    "intervention_mode": "integrated",
+    "intervention_priority": "chemical and cultural"
+  },
+  "advice": "Treatment recommendations...",
+  "follow_up_questions": ["How urgent is this?", "What if I cannot find the preferred product?"]
+}
+```
+
+### `POST /api/chat`
+Continue a diagnosis conversation using the stored session memory.
+
+**Request:**
+```json
+{
+  "session_id": "d7b5c1d4-0b8d-4a6d-9a2e-4c5fd5c3b1f1",
+  "message": "What if I can only get a different fungicide?"
+}
+```
+
+**Response:**
+```json
+{
+  "session_id": "d7b5c1d4-0b8d-4a6d-9a2e-4c5fd5c3b1f1",
+  "answer": "..."
 }
 ```
 
 ## 🧪 Model Details
 
-- **Architecture**: CNN (Convolutional Neural Network)
+- **Architecture**: Multimodal vision analysis when configured, with CNN fallback
 - **Input Size**: 224x224 RGB images
 - **Output**: 4 classes per crop (3 diseases + Healthy)
 - **Framework**: TensorFlow/Keras
@@ -170,7 +212,8 @@ Upload crop image and get disease prediction with treatment advice.
 The RAG system uses:
 - **Embeddings**: sentence-transformers/all-MiniLM-L6-v2
 - **Vector Store**: FAISS
-- **LLM**: Mistral Small Latest
+- **LLM**: Ollama Cloud (`deepseek-v3.2:cloud` + `gemini-3-flash-preview:cloud`)
+- **Memory**: JSON-backed session store for follow-up context
 - **Source**: Structured disease information in `kbase.json`
 
 ## 🛠️ Development
@@ -178,7 +221,7 @@ The RAG system uses:
 ### Adding New Diseases
 
 1. Update `kbase.json` with new disease information
-2. Retrain CNN model or add new crop model
+2. Retrain the CNN model or configure the multimodal provider for the new crop
 3. Run `python vectorize_kbase.py` to update FAISS index
 4. Update `MODEL_PATHS` and `LABELS` in `main.py`
 
@@ -200,7 +243,8 @@ docker run -p 7860:7860 agrisentry
 
 ## ⚠️ Notes
 
-- Ensure `.env` file is created with valid Mistral API key
+- Ensure `.env` file is created with a valid `OLLAMA_API_KEY`
+- Keep `TEXT_LLM_PROVIDER=ollama` and `VISION_LLM_PROVIDER=ollama`
 - Model files (~159MB) should be placed in `server/models/`
 - FAISS index must be generated before first run
 - API key should never be committed to version control

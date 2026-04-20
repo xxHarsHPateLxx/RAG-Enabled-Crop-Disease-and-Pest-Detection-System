@@ -1,0 +1,902 @@
+{
+  "sessions": {
+    "b12e499f-bec9-4392-ab4c-e29047759124": {
+      "created_at": "2026-04-20T07:27:00.586416+00:00",
+      "updated_at": "2026-04-20T16:56:18.515505+00:00",
+      "diagnoses": [
+        {
+          "session_id": "b12e499f-bec9-4392-ab4c-e29047759124",
+          "diagnosis_id": "72996e6e-d4c8-431c-b783-1f799f705c0c",
+          "crop": "Wheat",
+          "disease": "Wheat Stripe Rust (Yellow Rust)",
+          "confidence": 0.92,
+          "analysis_source": "multimodal_llm",
+          "reasoning": {
+            "severity_assessment": "Moderate",
+            "confidence_band": "High",
+            "intervention_mode": "Chemical and Cultural",
+            "intervention_priority": "High",
+            "key_factors": [
+              "Linear arrangement of pustules",
+              "Yellow-orange spore color",
+              "Parallel orientation to leaf veins",
+              "Rapid airborne spread potential"
+            ],
+            "evidence_points": [
+              "Image model confidence of 0.9200 for Wheat Stripe Rust",
+              "Visual confirmation of yellow-orange pustules in distinct linear stripes",
+              "Symptoms distinct from Brown Rust (which are scattered) and Smut (which affects grain heads)",
+              "Moderate severity indicates established infection requiring immediate action to protect the flag leaf"
+            ],
+            "safety_notes": [
+              "Wear appropriate personal protective equipment (PPE) when applying fungicides",
+              "Avoid excessive nitrogen application which can increase susceptibility",
+              "Check local regulations for approved triazole fungicides in your region"
+            ],
+            "follow_up_questions": [
+              "What is the current growth stage of your wheat (e.g., tillering, booting, heading)?",
+              "Is the infection visible on the flag leaf (the top-most leaf)?",
+              "Have you had recent cool, moist weather or heavy dew in the mornings?"
+            ],
+            "summary": "The wheat crop is diagnosed with Stripe Rust (Yellow Rust) at a moderate severity level. This fungal disease is highly aggressive and spreads quickly via wind-borne spores. Because it is currently at a moderate stage, there is a high risk of yield loss if the infection reaches the flag leaf, which is critical for grain filling. Immediate application of systemic fungicides like Propiconazole or Tebuconazole is recommended, alongside monitoring of neighboring fields."
+          },
+          "retrieval_trace": [
+            {
+              "round": 1,
+              "query": "Crop Wheat, Disease Wheat Stripe Rust (Yellow Rust), treatment, prevention, The image shows wheat leaves with numerous small, yellow-orange pustules arranged in distinct linear stripes parallel to the leaf veins., Recent follow-up messages:\n- user: how bad is it",
+              "documents": [
+                {
+                  "crop": "Wheat",
+                  "disease": "Healthy"
+                },
+                {
+                  "crop": "Wheat",
+                  "disease": "Brown Rust"
+                },
+                {
+                  "crop": "Maize",
+                  "disease": "Common Rust"
+                },
+                {
+                  "crop": "Rice",
+                  "disease": "Brown Spot"
+                }
+              ]
+            },
+            {
+              "round": 2,
+              "query": "Wheat Stripe Rust (Yellow Rust) Puccinia striiformis severity yield impact symptoms treatment prevention",
+              "documents": [
+                {
+                  "crop": "Wheat",
+                  "disease": "Brown Rust"
+                },
+                {
+                  "crop": "Maize",
+                  "disease": "Common Rust"
+                },
+                {
+                  "crop": "Wheat",
+                  "disease": "Smut"
+                },
+                {
+                  "crop": "Wheat",
+                  "disease": "Healthy"
+                }
+              ]
+            }
+          ],
+          "image_summary": "The image shows wheat leaves with numerous small, yellow-orange pustules arranged in distinct linear stripes parallel to the leaf veins.",
+          "timestamp": "2026-04-20T07:41:16.928180+00:00"
+        },
+        {
+          "session_id": "b12e499f-bec9-4392-ab4c-e29047759124",
+          "diagnosis_id": "d8f73755-d5f9-4527-962f-db28455f301e",
+          "crop": "Maize",
+          "disease": "Common Rust",
+          "confidence": 0.95,
+          "analysis_source": "multimodal_llm",
+          "reasoning": {
+            "severity_assessment": "Moderate",
+            "confidence_band": "High",
+            "intervention_mode": "Curative and Protective",
+            "intervention_priority": "Medium",
+            "key_factors": [
+              "Temperature range of 16–23°C",
+              "High humidity or leaf wetness exceeding 6 hours",
+              "Presence of alternate host (Oxalis spp.)",
+              "Hybrid susceptibility",
+              "Late planting timing"
+            ],
+            "evidence_points": [
+              "Image model confidence of 0.95",
+              "Presence of small, raised, reddish-brown (cinnamon) pustules",
+              "Pustules scattered across the leaf surface",
+              "Visual confirmation of fungal rust characteristics"
+            ],
+            "safety_notes": [
+              "Follow specific label instructions for Propiconazole or Azoxystrobin",
+              "Observe Pre-Harvest Intervals (PHI) before grazing or harvest",
+              "Wear appropriate Personal Protective Equipment (PPE) during fungicide application",
+              "Ensure proper disposal of chemical containers"
+            ],
+            "follow_up_questions": [
+              "Are the pustules visible on both the upper and lower surfaces of the leaves?",
+              "What is the current growth stage of the maize (e.g., V12, Tasseling)?",
+              "Have you noticed any wood sorrel (Oxalis) weeds in or around the field?",
+              "Is this a hybrid variety known for rust resistance?"
+            ],
+            "summary": "The maize crop is diagnosed with Common Rust (Puccinia sorghi) at a moderate severity level. The infection is characterized by cinnamon-brown powdery pustules that can reduce yield by 3-15% or more if left untreated. Immediate intervention with systemic fungicides like Propiconazole (Tilt) or a combination of Azoxystrobin and Propiconazole (Amistar Top) is recommended, especially if the crop has not yet reached the R1 (silking) stage. Cultural management should focus on removing alternate hosts and monitoring for spread in cool, humid conditions."
+          },
+          "retrieval_trace": [
+            {
+              "round": 1,
+              "query": "Crop Maize, Disease Common Rust, treatment, prevention, The maize leaf shows numerous small, raised, reddish-brown pustules scattered across the surface, characteristic of a fungal rust infection., Recent diagnoses:\n- 2026-04-20T07:41:16.928180+00:00: Wheat / Wheat Stripe Rust (Yellow Rust) (confidence 0.92)\n\nRecent follow-up messages:\n- user: how bad is it",
+              "documents": [
+                {
+                  "crop": "Maize",
+                  "disease": "Common Rust"
+                },
+                {
+                  "crop": "Wheat",
+                  "disease": "Brown Rust"
+                },
+                {
+                  "crop": "Maize",
+                  "disease": "Healthy"
+                },
+                {
+                  "crop": "Maize",
+                  "disease": "Blight"
+                }
+              ]
+            }
+          ],
+          "image_summary": "The maize leaf shows numerous small, raised, reddish-brown pustules scattered across the surface, characteristic of a fungal rust infection.",
+          "timestamp": "2026-04-20T07:42:55.960098+00:00"
+        },
+        {
+          "session_id": "b12e499f-bec9-4392-ab4c-e29047759124",
+          "diagnosis_id": "06d722b2-7764-415f-a490-0d32e00bddfd",
+          "crop": "Wheat",
+          "disease": "Septoria tritici blotch",
+          "confidence": 0.92,
+          "analysis_source": "multimodal_llm",
+          "reasoning": {
+            "severity_assessment": "Moderate",
+            "confidence_band": "High",
+            "intervention_mode": "Chemical and Cultural",
+            "intervention_priority": "High",
+            "key_factors": [
+              "Presence of pycnidia (small black specks) within lesions",
+              "Elongated tan-colored necrotic blotches",
+              "Favorable conditions for fungal spread (humidity/leaf wetness)",
+              "Risk to flag leaf and grain fill"
+            ],
+            "evidence_points": [
+              "Image model confidence of 0.9200 for Septoria tritici blotch",
+              "Visual identification of pycnidia, a diagnostic feature of Septoria",
+              "Lesions running parallel to leaf veins",
+              "Moderate severity hint indicating established infection"
+            ],
+            "safety_notes": [
+              "Always wear appropriate personal protective equipment (PPE) when applying fungicides",
+              "Follow local environmental regulations regarding chemical runoff",
+              "Ensure pre-harvest intervals (PHI) are observed if applying chemicals near maturity",
+              "Verify that selected fungicides are registered for use on wheat in your specific region"
+            ],
+            "follow_up_questions": [
+              "Has the infection reached the flag leaf or the leaf immediately below it?",
+              "What is the current growth stage of the wheat (e.g., tillering, booting, heading)?",
+              "Has there been frequent rainfall or high humidity in the last 7-10 days?",
+              "Are you seeing similar symptoms on other varieties in the same field?"
+            ],
+            "summary": "The wheat crop is diagnosed with Septoria tritici blotch (STB) at a moderate severity level. The presence of characteristic black pycnidia within tan necrotic lesions confirms the fungal pathogen. Because STB can rapidly progress to the flag leaf—the primary driver of grain yield—immediate intervention with systemic fungicides (such as triazoles or strobilurins) and cultural practices to improve airflow is recommended to prevent significant yield loss."
+          },
+          "retrieval_trace": [
+            {
+              "round": 1,
+              "query": "Crop Wheat, Disease Septoria tritici blotch, treatment, prevention, The wheat leaf displays elongated, tan-colored necrotic blotches that run parallel to the veins. Within these lesions, small black specks are visible, which are the fungal fruiting bodies (pycnidia)., Recent diagnoses:\n- 2026-04-20T07:41:16.928180+00:00: Wheat / Wheat Stripe Rust (Yellow Rust) (confidence 0.92)\n- 2026-04-20T07:42:55.960098+00:00: Maize / Common Rust (confidence 0.95)\n\nRecent follow-up messages:\n- user: how bad is it",
+              "documents": [
+                {
+                  "crop": "Maize",
+                  "disease": "Common Rust"
+                },
+                {
+                  "crop": "Wheat",
+                  "disease": "Brown Rust"
+                },
+                {
+                  "crop": "Wheat",
+                  "disease": "Leaf Blight"
+                },
+                {
+                  "crop": "Rice",
+                  "disease": "Brown Spot"
+                }
+              ]
+            },
+            {
+              "round": 2,
+              "query": "Wheat Septoria tritici blotch severity yield impact symptoms treatment prevention Zymoseptoria tritici",
+              "documents": [
+                {
+                  "crop": "Wheat",
+                  "disease": "Healthy"
+                },
+                {
+                  "crop": "Wheat",
+                  "disease": "Leaf Blight"
+                },
+                {
+                  "crop": "Wheat",
+                  "disease": "Smut"
+                },
+                {
+                  "crop": "Rice",
+                  "disease": "Brown Spot"
+                }
+              ]
+            }
+          ],
+          "image_summary": "The wheat leaf displays elongated, tan-colored necrotic blotches that run parallel to the veins. Within these lesions, small black specks are visible, which are the fungal fruiting bodies (pycnidia).",
+          "timestamp": "2026-04-20T07:52:17.451298+00:00"
+        },
+        {
+          "session_id": "b12e499f-bec9-4392-ab4c-e29047759124",
+          "diagnosis_id": "c4aed2ac-32b8-4255-8faa-eaf82d1fec7f",
+          "crop": "Rice",
+          "disease": "Rice Blast",
+          "confidence": 0.88,
+          "analysis_source": "multimodal_llm",
+          "reasoning": {
+            "severity_assessment": "Moderate",
+            "confidence_band": "High",
+            "intervention_mode": "Integrated Management (Chemical, Cultural, Biological)",
+            "intervention_priority": "High",
+            "key_factors": [
+              "High humidity (>90%) and long dew periods",
+              "Moderate temperatures (24-28°C)",
+              "Possible excessive nitrogen fertilization",
+              "Airborne fungal pathogen Magnaporthe oryzae",
+              "Presence of distinct spindle-shaped necrotic lesions"
+            ],
+            "evidence_points": [
+              "Image shows characteristic spindle-shaped lesion with whitish necrotic center and brown margins, matching Rice Blast symptoms",
+              "Image model confidence score of 0.8800 supports Rice Blast diagnosis",
+              "Severity hint from vision model indicates moderate severity with distinct necrotic lesion",
+              "Retrieved knowledge describes similar symptoms for Leaf Blast phase of Rice Blast"
+            ],
+            "safety_notes": [
+              "Use personal protective equipment when handling and applying chemical fungicides",
+              "Follow label instructions for fungicide application to prevent resistance development",
+              "Ensure proper storage and disposal of chemicals to avoid environmental contamination",
+              "Monitor for neck blast symptoms, which can lead to total yield loss if untreated",
+              "Consider biological and cultural methods to reduce reliance on chemicals"
+            ],
+            "follow_up_questions": [
+              "What is the current growth stage of the rice crop?",
+              "Are there any signs of infection on the neck or panicles (neck blast)?",
+              "What have been the recent weather conditions, especially humidity and temperature?",
+              "Has nitrogen fertilizer been applied recently, and at what rate?",
+              "Are resistant rice varieties being used, and if so, which ones?"
+            ],
+            "summary": "Diagnosis indicates Rice Blast (Leaf Blast) with moderate severity based on characteristic spindle-shaped lesions. High confidence from image model. Immediate integrated management is recommended to prevent progression to more severe neck blast and potential yield losses of 10-30% or higher."
+          },
+          "retrieval_trace": [
+            {
+              "round": 1,
+              "query": "Crop Rice, Disease Rice Blast, treatment, prevention, A close-up view of a green rice leaf blade exhibiting a characteristic elongated, spindle-shaped lesion. The lesion has a whitish or straw-colored necrotic center with brownish margins, running parallel to the leaf veins., Recent diagnoses:\n- 2026-04-20T07:41:16.928180+00:00: Wheat / Wheat Stripe Rust (Yellow Rust) (confidence 0.92)\n- 2026-04-20T07:42:55.960098+00:00: Maize / Common Rust (confidence 0.95)\n- 2026-04-20T07:52:17.451298+00:00: Wheat / Septoria tritici blotch (confidence 0.92)\n\nRecent follow-up messages:\n- user: how bad is it\n\n- user: what are ideal conditions for rice crops\n\n- assistant: Unable to answer follow-up right now: LLM request failed due to temporary model load. Please try again shortly.",
+              "documents": [
+                {
+                  "crop": "Rice",
+                  "disease": "Leaf Blast"
+                },
+                {
+                  "crop": "Rice",
+                  "disease": "Healthy"
+                },
+                {
+                  "crop": "Rice",
+                  "disease": "Brown Spot"
+                },
+                {
+                  "crop": "Rice",
+                  "disease": "Bacterial Leaf Blight"
+                }
+              ]
+            }
+          ],
+          "image_summary": "A close-up view of a green rice leaf blade exhibiting a characteristic elongated, spindle-shaped lesion. The lesion has a whitish or straw-colored necrotic center with brownish margins, running parallel to the leaf veins.",
+          "timestamp": "2026-04-20T14:07:48.474573+00:00"
+        },
+        {
+          "session_id": "b12e499f-bec9-4392-ab4c-e29047759124",
+          "diagnosis_id": "bb3af315-d24a-4d51-bc23-5fe168eee4f6",
+          "crop": "Wheat",
+          "disease": "Fusarium Head Blight",
+          "confidence": 0.85,
+          "analysis_source": "multimodal_llm",
+          "reasoning": {
+            "severity_assessment": "Moderate to High",
+            "confidence_band": "High",
+            "intervention_mode": "Immediate",
+            "intervention_priority": "High",
+            "key_factors": [
+              "Warm and humid conditions during flowering",
+              "Presence of fungal inoculum from crop residue",
+              "Susceptible wheat variety",
+              "Rainfall or irrigation during anthesis"
+            ],
+            "evidence_points": [
+              "Image shows bleached or white wheat heads (spikes)",
+              "Premature bleaching is a classic symptom of Fusarium Head Blight",
+              "Multiple spikes affected, indicating moderate to high spread"
+            ],
+            "safety_notes": [
+              "Fusarium Head Blight can produce mycotoxins (e.g., deoxynivalenol) harmful if consumed",
+              "Fungicide applications require proper protective equipment and adherence to safety labels",
+              "Harvested grain should be tested for mycotoxin levels before use or sale"
+            ],
+            "follow_up_questions": [
+              "What is the current growth stage of the wheat crop?",
+              "Have there been any recent fungicide applications?",
+              "What wheat variety is being grown?",
+              "Are there weather forecasts for continued humidity or rain?"
+            ],
+            "summary": "Diagnosis of Fusarium Head Blight in wheat based on image showing bleached heads, with moderate to high severity and high confidence. Immediate intervention is prioritized due to risks of yield loss and mycotoxin contamination."
+          },
+          "retrieval_trace": [
+            {
+              "round": 1,
+              "query": "Crop Wheat, Disease Fusarium Head Blight, treatment, prevention, The image shows a stand of wheat plants where several of the seed heads (spikes) appear bleached or white, standing out against the darker background foliage. This premature bleaching is a classic symptom affecting the reproductive parts of the plant., Recent diagnoses:\n- 2026-04-20T07:42:55.960098+00:00: Maize / Common Rust (confidence 0.95)\n- 2026-04-20T07:52:17.451298+00:00: Wheat / Septoria tritici blotch (confidence 0.92)\n- 2026-04-20T14:07:48.474573+00:00: Rice / Rice Blast (confidence 0.88)\n\nRecent follow-up messages:\n- user: how bad is it\n\n- user: what are ideal conditions for rice crops\n\n- assistant: Unable to answer follow-up right now: LLM request failed due to temporary model load. Please try again shortly.",
+              "documents": [
+                {
+                  "crop": "Rice",
+                  "disease": "Leaf Blast"
+                },
+                {
+                  "crop": "Rice",
+                  "disease": "Brown Spot"
+                },
+                {
+                  "crop": "Wheat",
+                  "disease": "Leaf Blight"
+                },
+                {
+                  "crop": "Rice",
+                  "disease": "Healthy"
+                }
+              ]
+            }
+          ],
+          "image_summary": "The image shows a stand of wheat plants where several of the seed heads (spikes) appear bleached or white, standing out against the darker background foliage. This premature bleaching is a classic symptom affecting the reproductive parts of the plant.",
+          "timestamp": "2026-04-20T16:10:13.575994+00:00"
+        },
+        {
+          "session_id": "b12e499f-bec9-4392-ab4c-e29047759124",
+          "diagnosis_id": "a9c21999-7f0a-405d-a07a-07c84100a188",
+          "crop": "Wheat",
+          "disease": "Tan Spot",
+          "confidence": 0.78,
+          "analysis_source": "multimodal_llm",
+          "reasoning": {
+            "severity_assessment": "Moderate",
+            "confidence_band": "Medium-High",
+            "intervention_mode": "Integrated Management",
+            "intervention_priority": "Medium",
+            "key_factors": [
+              "Weather conditions (humidity, leaf wetness)",
+              "Crop residue management (previous wheat debris)",
+              "Susceptibility of wheat variety",
+              "Crop stage and canopy density",
+              "History of fungal diseases in the field"
+            ],
+            "evidence_points": [
+              "Image shows elongated necrotic lesion with tan center and dark margin, characteristic of Tan Spot",
+              "Recent diagnoses of other wheat fungal diseases (Septoria, FHB) indicate conducive environment",
+              "Moderate confidence from image model (0.78) aligns with visual symptom severity",
+              "Lesion pattern parallel to leaf veins matches typical Tan Spot presentation"
+            ],
+            "safety_notes": [
+              "Follow fungicide label instructions for safe application and dosage",
+              "Rotate fungicide modes of action to prevent resistance development",
+              "Wear appropriate protective equipment during spray operations",
+              "Adhere to pre-harvest intervals for any chemical treatments"
+            ],
+            "follow_up_questions": [
+              "What is the current growth stage of the wheat crop?",
+              "What wheat variety is planted, and is it known to be susceptible to Tan Spot?",
+              "Have there been recent periods of high humidity, rainfall, or leaf wetness?",
+              "Is there visible crop residue from previous wheat seasons in the field?",
+              "Are symptoms appearing on multiple leaves or plants across the field?"
+            ],
+            "summary": "Diagnosis: Tan Spot (Pyrenophora tritici-repentis) with moderate severity. Symptoms match characteristic elongated tan lesions with dark margins. Integrated management recommended, including fungicide application (e.g., propiconazole or azoxystrobin) and cultural practices like residue management and variety selection. Monitor field closely as recent fungal disease history indicates favorable conditions."
+          },
+          "retrieval_trace": [
+            {
+              "round": 1,
+              "query": "Wheat tan spot disease symptoms treatment prevention severity safety",
+              "documents": [
+                {
+                  "crop": "Wheat",
+                  "disease": "Healthy"
+                },
+                {
+                  "crop": "Maize",
+                  "disease": "Blight"
+                },
+                {
+                  "crop": "Wheat",
+                  "disease": "Leaf Blight"
+                },
+                {
+                  "crop": "Wheat",
+                  "disease": "Smut"
+                }
+              ]
+            },
+            {
+              "round": 2,
+              "query": "Pyrenophora tritici-repentis tan spot wheat symptoms treatment prevention",
+              "documents": [
+                {
+                  "crop": "Wheat",
+                  "disease": "Leaf Blight"
+                },
+                {
+                  "crop": "Wheat",
+                  "disease": "Brown Rust"
+                },
+                {
+                  "crop": "Wheat",
+                  "disease": "Smut"
+                },
+                {
+                  "crop": "Wheat",
+                  "disease": "Healthy"
+                }
+              ]
+            }
+          ],
+          "image_summary": "The image displays a cereal leaf, likely wheat, featuring a prominent, elongated necrotic lesion. The lesion has a characteristic tan to light brown center with a darker brown margin, running parallel to the leaf veins.",
+          "timestamp": "2026-04-20T16:12:40.085672+00:00"
+        },
+        {
+          "session_id": "b12e499f-bec9-4392-ab4c-e29047759124",
+          "diagnosis_id": "428efe9f-555c-472d-859f-5401d5f4493e",
+          "crop": "Wheat",
+          "disease": "Stripe Rust (Yellow Rust)",
+          "confidence": 0.95,
+          "analysis_source": "multimodal_llm",
+          "reasoning": {
+            "severity_assessment": "High",
+            "confidence_band": "Very High",
+            "intervention_mode": "Curative",
+            "intervention_priority": "High",
+            "key_factors": [
+              "Characteristic linear pustules of stripe rust",
+              "Active sporulation indicating disease progression",
+              "High image model confidence (0.9500)",
+              "Favorable conditions for rust (cool temperatures, high humidity)",
+              "Susceptible wheat variety likely"
+            ],
+            "evidence_points": [
+              "Image summary describes linear, yellow-orange pustules arranged in stripes, pathognomonic for stripe rust",
+              "Vision model severity hint notes active sporulation with distinct pustules",
+              "High confidence score from image model supports accurate diagnosis",
+              "Recent diagnoses of other wheat diseases indicate crop vulnerability"
+            ],
+            "safety_notes": [
+              "Use personal protective equipment when applying fungicides",
+              "Follow label instructions and local regulations for chemical treatments",
+              "Rotate fungicide modes of action to manage resistance risk",
+              "Avoid spray drift to non-target areas and crops"
+            ],
+            "follow_up_questions": [
+              "What is the growth stage of the wheat crop?",
+              "Has any fungicide been applied previously this season?",
+              "What wheat variety is being grown, and is it known for rust susceptibility?",
+              "What are the recent and forecasted weather conditions (temperature, humidity, rainfall)?",
+              "Is the infection localized or widespread across the field?"
+            ],
+            "summary": "Stripe rust (yellow rust) diagnosed on wheat with very high confidence based on image analysis showing characteristic linear pustules and active sporulation. Severity is high, requiring immediate curative intervention, such as fungicide application, combined with cultural practices to limit spread. Key factors include environmental conditions and host susceptibility."
+          },
+          "retrieval_trace": [
+            {
+              "round": 1,
+              "query": "Crop Wheat, Disease Stripe Rust (Yellow Rust), treatment, prevention, A close-up view of a wheat leaf exhibiting characteristic linear, yellow-orange pustules arranged in stripes parallel to the leaf veins., Recent diagnoses:\n- 2026-04-20T14:07:48.474573+00:00: Rice / Rice Blast (confidence 0.88)\n- 2026-04-20T16:10:13.575994+00:00: Wheat / Fusarium Head Blight (confidence 0.85)\n- 2026-04-20T16:12:40.085672+00:00: Wheat / Tan Spot (confidence 0.78)\n\nRecent follow-up messages:\n- user: how bad is it\n\n- user: what are ideal conditions for rice crops\n\n- assistant: Unable to answer follow-up right now: LLM request failed due to temporary model load. Please try again shortly.",
+              "documents": [
+                {
+                  "crop": "Maize",
+                  "disease": "Common Rust"
+                },
+                {
+                  "crop": "Rice",
+                  "disease": "Brown Spot"
+                },
+                {
+                  "crop": "Wheat",
+                  "disease": "Brown Rust"
+                },
+                {
+                  "crop": "Rice",
+                  "disease": "Leaf Blast"
+                }
+              ]
+            }
+          ],
+          "image_summary": "A close-up view of a wheat leaf exhibiting characteristic linear, yellow-orange pustules arranged in stripes parallel to the leaf veins.",
+          "timestamp": "2026-04-20T16:30:32.558530+00:00"
+        },
+        {
+          "session_id": "b12e499f-bec9-4392-ab4c-e29047759124",
+          "diagnosis_id": "065a8f8c-11b8-4532-8bcf-445b5454b5bd",
+          "crop": "Rice",
+          "disease": "Brown Spot",
+          "confidence": 0.88,
+          "analysis_source": "multimodal_llm",
+          "reasoning": {
+            "severity_assessment": "Moderate to High",
+            "confidence_band": "High",
+            "intervention_mode": "Curative",
+            "intervention_priority": "Medium",
+            "key_factors": [
+              "Association with nutrient-deficient soils, especially potassium deficiency",
+              "Favorable conditions: temperatures 25-30°C and high humidity",
+              "Characteristic oval brown spots with yellow halos on leaves",
+              "Potential yield loss of 6-58% and grain quality reduction"
+            ],
+            "evidence_points": [
+              "Image shows scattered, small, circular dark brown lesions with yellowish halos on rice leaf, matching Brown Spot symptoms",
+              "High image model confidence score of 0.8800 supports the diagnosis",
+              "Retrieved knowledge confirms symptoms and causal fungus Bipolaris oryzae",
+              "Severity hint from vision model aligns with known medium-high severity of Brown Spot"
+            ],
+            "safety_notes": [
+              "Wear personal protective equipment (PPE) when handling and applying fungicides",
+              "Follow fungicide label instructions for dosage, safety intervals, and environmental conditions",
+              "Avoid application during windy conditions to prevent drift and contamination",
+              "Safely remove and dispose of infected plant debris to reduce inoculum"
+            ],
+            "follow_up_questions": [
+              "What is the soil nutrient status, particularly for potassium and silicon?",
+              "Has there been any recent drought stress or irregular irrigation?",
+              "What rice variety is being grown, and is it resistant to Brown Spot?",
+              "Are symptoms present on lower leaves first, and is there any grain discoloration?"
+            ],
+            "summary": "Brown Spot diagnosed on rice with moderate to high severity based on image evidence and high model confidence. Immediate curative intervention is recommended, including fungicide application (e.g., Mancozeb or Propiconazole) and cultural practices like correcting nutrient deficiencies and optimizing water management to mitigate yield loss."
+          },
+          "retrieval_trace": [
+            {
+              "round": 1,
+              "query": "Rice brown spot disease causal agent symptoms favorable conditions severity yield loss management\n",
+              "documents": [
+                {
+                  "crop": "Rice",
+                  "disease": "Brown Spot"
+                },
+                {
+                  "crop": "Rice",
+                  "disease": "Healthy"
+                },
+                {
+                  "crop": "Rice",
+                  "disease": "Bacterial Leaf Blight"
+                },
+                {
+                  "crop": "Rice",
+                  "disease": "Leaf Blast"
+                }
+              ]
+            }
+          ],
+          "image_summary": "A close-up view of a green monocot leaf, likely rice, covered in scattered, small, circular dark brown lesions with yellowish halos.",
+          "timestamp": "2026-04-20T16:53:08.640062+00:00"
+        }
+      ],
+      "messages": [
+        {
+          "role": "user",
+          "content": "how bad is it\n",
+          "timestamp": "2026-04-20T07:27:27.681412+00:00",
+          "metadata": {
+            "type": "follow_up"
+          }
+        },
+        {
+          "role": "user",
+          "content": "what are ideal conditions for rice crops\n",
+          "timestamp": "2026-04-20T12:52:44.855389+00:00",
+          "metadata": {
+            "type": "follow_up"
+          }
+        },
+        {
+          "role": "assistant",
+          "content": "Unable to answer follow-up right now: LLM request failed due to temporary model load. Please try again shortly.",
+          "timestamp": "2026-04-20T12:53:27.927218+00:00",
+          "metadata": {
+            "type": "follow_up_answer"
+          }
+        },
+        {
+          "role": "user",
+          "content": "what should be next immediate action\n",
+          "timestamp": "2026-04-20T16:31:06.927400+00:00",
+          "metadata": {
+            "type": "follow_up"
+          }
+        },
+        {
+          "role": "assistant",
+          "content": "Based on the **High severity** and **Curative intervention** priority of this Stripe Rust diagnosis, the next immediate actions are:\n\n### 1. Apply a Curative Fungicide (Most Urgent)\n*   **Goal:** Stop the active infection and protect remaining healthy tissue.\n*   **Action:** Apply a registered, effective fungicide **as soon as possible**. Weather conditions (cool, humid) are currently favorable for the disease to spread rapidly.\n*   **Product Selection:** Prioritize fungicides with **triazole (DMI)** or **strobilurin (QoI)** modes of action, which are effective against rusts. Consider consulting a local agronomist for the best registered product and rate for your area.\n*   **Critical Notes:**\n    *   **Wear PPE** during mixing and application.\n    *   **Follow the label** for dosage, safety intervals, and environmental conditions.\n    *   **Rotate modes of action** in future applications to manage resistance risk.\n\n### 2. Assess Field Scope & Growth Stage\n*   **Action:** Walk the field to determine if the infection is localized or widespread. This influences the treatment strategy and potential yield impact.\n*   **Note Growth Stage:** Fungicide application is most critical during flag leaf emergence and heading stages to protect yield. If the crop is past flowering, the economic benefit of spraying may be reduced.\n\n### 3. Implement Supporting Cultural Actions\n*   **Avoid Nitrogen:** Do not apply additional nitrogen fertilizer, as it promotes lush, susceptible growth.\n*   **Monitor Irrigation:** If irrigating, schedule to avoid prolonged leaf wetness that favors disease.\n\n### 4. Plan Follow-up & Prevention\n*   **Monitor:** Re-inspect the field 7-10 days after application to assess control.\n*   **Record:** Note the variety infected for future planning—choose more resistant varieties next season.\n*   **Clean Equipment:** Clean machinery before moving to other fields to prevent spreading spores.\n\n**Immediate Summary: Organize and apply a curative fungicide spray within the next few days, while simultaneously assessing the field's situation.** Given the high confidence in this diagnosis and the active sporulation seen, delay will likely result in significant yield loss.",
+          "timestamp": "2026-04-20T16:31:24.073105+00:00",
+          "metadata": {
+            "type": "follow_up_answer"
+          }
+        },
+        {
+          "role": "user",
+          "content": "What rice variety is being grown, and is it resistant to Brown Spot?",
+          "timestamp": "2026-04-20T16:56:00.285115+00:00",
+          "metadata": {
+            "type": "follow_up"
+          }
+        },
+        {
+          "role": "assistant",
+          "content": "To answer your question, we need to identify the specific variety and then check its resistance profile. Since this information wasn't provided in the initial diagnosis, here is how to proceed:\n\n### 1. Identify Your Rice Variety\n*   **Check Seed Records:** Review your purchase invoice, seed bag tags, or planting records. The variety name should be listed (e.g., 'IR64', 'Swarna', 'BRRI dhan28', 'Cocodrie').\n*   **Local Knowledge:** If records are unavailable, consult with whoever supplied the seed or your local agricultural extension officer. They often know what varieties are commonly grown in your area.\n\n### 2. Assess Resistance to Brown Spot\nResistance varies significantly by variety. Here’s a general guide:\n*   **Modern, Improved Varieties:** Many are bred for resistance to major diseases like Blast or Bacterial Leaf Blight, but may still be susceptible to Brown Spot, especially under stress.\n*   **Traditional/Landrace Varieties:** Often show more tolerance to Brown Spot but may have lower yield potential.\n*   **Key Point:** Brown Spot is strongly linked to **plant stress** (especially potassium/silicon deficiency, drought). A susceptible variety will show much worse symptoms under these conditions, while a resistant/tolerant one may still be infected but with less severity and yield impact.\n\n### 3. How to Get a Specific Answer\n*   **Consult Local Experts:** Your **local agricultural university, extension service, or seed supplier** is the best resource. Provide them with the variety name for confirmation of its resistance rating.\n*   **Search Regional Databases:** Some national agricultural research institutes (e.g., IRRI, BRRI, AFRICA RICE) have online databases with disease resistance profiles for released varieties.\n\n### Practical Recommendation:\nGiven the confirmed **Brown Spot** diagnosis, focus on the **curative actions** already outlined (fungicide, correcting potassium deficiency, optimizing water). **For future seasons:**\n1.  **Choose a Tolerant Variety:** Once you identify your current variety, ask your extension agent for recommendations for varieties with better Brown Spot tolerance suited to your region.\n2.  **Address the Root Cause:** Prioritize **soil testing and correcting nutrient deficiencies** (especially Potassium and Silicon). This is often as critical as variety choice for managing Brown Spot.\n\n**In summary: Identify your variety from seed records, then consult local experts for its specific resistance rating. Regardless of the variety, immediate management of nutrients and soil moisture is essential to control the current outbreak.**",
+          "timestamp": "2026-04-20T16:56:18.515500+00:00",
+          "metadata": {
+            "type": "follow_up_answer"
+          }
+        }
+      ]
+    },
+    "test-session": {
+      "created_at": "2026-04-20T07:38:27.792485+00:00",
+      "updated_at": "2026-04-20T07:38:42.393865+00:00",
+      "diagnoses": [],
+      "messages": [
+        {
+          "role": "user",
+          "content": "how bad is it",
+          "timestamp": "2026-04-20T07:38:27.793790+00:00",
+          "metadata": {
+            "type": "follow_up"
+          }
+        },
+        {
+          "role": "assistant",
+          "content": "To determine the severity of the situation, you need to categorize the damage based on its spread and the part of the plant affected.\n\n### Severity Rubric\n\n*   **Critical (High Risk):** If the issue affects the **main stem, crown, or more than 20% of the total leaf area**, or if plants are **wilting rapidly**, the situation is severe. This often indicates a systemic infection or advanced pest infestation that could lead to total crop loss.\n*   **Moderate:** If symptoms are visible on 5–10% of the plants but are confined to older leaves or specific \"hotspots\" in the field, the crop can likely be saved with immediate intervention.\n*   **Low:** Minor spotting or localized insect feeding on less than 5% of the foliage is generally manageable and may not require aggressive chemical treatment.\n\n### Practical Next Steps\n\n1.  **Urgent Field Inspection:** If you observe rapid spreading (symptoms changing significantly within 24–48 hours) or widespread wilting, you must arrange an **urgent local field inspection** by an agronomist or extension officer to prevent total loss.\n2.  **Treatment Substitutes:** If specific recommended chemicals are unavailable:\n    *   **For Fungal Issues:** Use broad-spectrum **Copper-based fungicides** or **Sulfur-based sprays** as a temporary measure.\n    *   **For Pests:** Use **Neem oil** or **Insecticidal soaps** for soft-bodied insects.\n3.  **Confirm Local Guidance:** Before applying any substitutes, **confirm with your local agricultural extension office** to ensure the treatment is registered for your specific crop and effective against local resistant strains.\n\n**Summary:** If the damage is moving upward from the base or appearing on new growth, it is considered **urgent**. Focus on isolating affected areas and improving airflow immediately.",
+          "timestamp": "2026-04-20T07:38:42.393860+00:00",
+          "metadata": {
+            "type": "follow_up_answer"
+          }
+        }
+      ]
+    },
+    "predict-smoke": {
+      "created_at": "2026-04-20T07:39:29.530133+00:00",
+      "updated_at": "2026-04-20T07:39:54.402964+00:00",
+      "diagnoses": [
+        {
+          "session_id": "predict-smoke",
+          "diagnosis_id": "c0b912a6-049f-48d0-9267-37be6ca9f5c3",
+          "crop": "Rice",
+          "disease": "Healthy",
+          "confidence": 0.99,
+          "analysis_source": "multimodal_llm",
+          "reasoning": {
+            "severity_assessment": "Healthy / No disease detected",
+            "confidence_band": "High (0.99)",
+            "intervention_mode": "Preventive Maintenance & Monitoring",
+            "intervention_priority": "Low",
+            "key_factors": [
+              "Nutrient management",
+              "Water levels",
+              "Environmental monitoring",
+              "Growth stage"
+            ],
+            "evidence_points": [
+              "Uniform vibrant green foliage",
+              "Absence of spindle-shaped lesions characteristic of Rice Blast",
+              "Absence of oval brown spots characteristic of Brown Spot",
+              "No evidence of bacterial leaf margin yellowing or kresek symptoms",
+              "Clean leaf surfaces without visible fungal sporulation or bacterial ooze"
+            ],
+            "safety_notes": [
+              "Avoid excessive nitrogen application which can increase susceptibility to Blast and Bacterial Leaf Blight",
+              "Ensure balanced potassium levels to maintain natural resistance against Brown Spot",
+              "Monitor closely after periods of high humidity or heavy rainfall"
+            ],
+            "follow_up_questions": [
+              "What is the current growth stage of the rice crop?",
+              "Have there been recent periods of high humidity or heavy rainfall in your area?",
+              "What is your current nitrogen and potassium fertilization schedule?"
+            ],
+            "summary": "The rice crop is currently healthy with no visible signs of disease. To maintain this status, continue with balanced fertilization and regular field monitoring, especially during high-risk weather conditions for Blast and Bacterial Leaf Blight. No chemical intervention is required at this time."
+          },
+          "retrieval_trace": [
+            {
+              "round": 1,
+              "query": "Crop Rice, Disease Healthy, treatment, prevention, The image displays a uniform, vibrant green surface with no visible signs of lesions, spots, or discoloration typical of rice diseases.",
+              "documents": [
+                {
+                  "crop": "Rice",
+                  "disease": "Healthy"
+                },
+                {
+                  "crop": "Rice",
+                  "disease": "Brown Spot"
+                },
+                {
+                  "crop": "Wheat",
+                  "disease": "Healthy"
+                },
+                {
+                  "crop": "Rice",
+                  "disease": "Leaf Blast"
+                }
+              ]
+            },
+            {
+              "round": 2,
+              "query": "general rice crop maintenance, best practices for healthy rice growth, prevention of common rice diseases, rice cultivation guidelines",
+              "documents": [
+                {
+                  "crop": "Rice",
+                  "disease": "Healthy"
+                },
+                {
+                  "crop": "Rice",
+                  "disease": "Leaf Blast"
+                },
+                {
+                  "crop": "Rice",
+                  "disease": "Bacterial Leaf Blight"
+                },
+                {
+                  "crop": "Rice",
+                  "disease": "Brown Spot"
+                }
+              ]
+            }
+          ],
+          "image_summary": "The image displays a uniform, vibrant green surface with no visible signs of lesions, spots, or discoloration typical of rice diseases.",
+          "timestamp": "2026-04-20T07:39:54.402916+00:00"
+        }
+      ],
+      "messages": []
+    },
+    "mode-test-cnn": {
+      "created_at": "2026-04-20T07:59:33.324989+00:00",
+      "updated_at": "2026-04-20T07:59:33.325001+00:00",
+      "diagnoses": [],
+      "messages": []
+    },
+    "mode-test-mm2": {
+      "created_at": "2026-04-20T08:01:52.826471+00:00",
+      "updated_at": "2026-04-20T08:01:52.826491+00:00",
+      "diagnoses": [],
+      "messages": []
+    },
+    "mode-test-cnn2": {
+      "created_at": "2026-04-20T08:01:58.356128+00:00",
+      "updated_at": "2026-04-20T08:01:58.356139+00:00",
+      "diagnoses": [],
+      "messages": []
+    },
+    "mode-test-mm3": {
+      "created_at": "2026-04-20T08:02:23.054943+00:00",
+      "updated_at": "2026-04-20T08:02:23.054957+00:00",
+      "diagnoses": [],
+      "messages": []
+    },
+    "cnn-fix-check": {
+      "created_at": "2026-04-20T09:08:00.882823+00:00",
+      "updated_at": "2026-04-20T09:08:00.882845+00:00",
+      "diagnoses": [],
+      "messages": []
+    },
+    "cnn-fix-check2": {
+      "created_at": "2026-04-20T09:08:39.300153+00:00",
+      "updated_at": "2026-04-20T09:09:26.635215+00:00",
+      "diagnoses": [
+        {
+          "session_id": "cnn-fix-check2",
+          "diagnosis_id": "f0c21ad9-3a92-4d90-a4f5-42ae3a9f1bd8",
+          "crop": "Rice",
+          "disease": "Healthy",
+          "confidence": 0.98,
+          "analysis_source": "cnn_fallback_multimodal",
+          "reasoning": {
+            "severity_assessment": "Healthy / No disease detected",
+            "confidence_band": "High (0.98)",
+            "intervention_mode": "Preventive Maintenance",
+            "intervention_priority": "Low",
+            "key_factors": [
+              "Growth stage monitoring",
+              "Nutrient balance",
+              "Water management",
+              "Environmental surveillance"
+            ],
+            "evidence_points": [
+              "Uniform vibrant green foliage across the frame",
+              "Absence of necrotic lesions, spindle-shaped spots, or water-soaked stripes",
+              "Clean leaf margins without yellowing or bacterial ooze",
+              "High model confidence score of 98%"
+            ],
+            "safety_notes": [
+              "Avoid prophylactic fungicide or bactericide application on healthy crops to prevent resistance and unnecessary costs",
+              "Ensure proper PPE if applying routine fertilizers or soil amendments",
+              "Monitor closely for early signs of Blast or Brown Spot if humidity exceeds 80%"
+            ],
+            "follow_up_questions": [
+              "What is the current growth stage of the rice (e.g., tillering, booting, heading)?",
+              "Has there been any recent heavy rainfall or extended periods of leaf wetness?",
+              "What is your current nitrogen fertilization schedule?"
+            ],
+            "summary": "The rice crop is currently healthy, showing no symptoms of common diseases such as Leaf Blast, Brown Spot, or Bacterial Leaf Blight. The foliage is uniform and vibrant. It is recommended to maintain standard cultural practices, including balanced fertilization and proper water management, while continuing routine monitoring for any changes in plant health."
+          },
+          "retrieval_trace": [
+            {
+              "round": 1,
+              "query": "Crop Rice, Disease Healthy, treatment, prevention, The image displays a uniform, vibrant green color across the entire frame without any visible lesions, spots, or abnormalities.",
+              "documents": [
+                {
+                  "crop": "Rice",
+                  "disease": "Healthy"
+                },
+                {
+                  "crop": "Wheat",
+                  "disease": "Healthy"
+                },
+                {
+                  "crop": "Rice",
+                  "disease": "Brown Spot"
+                },
+                {
+                  "crop": "Rice",
+                  "disease": "Leaf Blast"
+                }
+              ]
+            },
+            {
+              "round": 2,
+              "query": "Rice crop general maintenance, best practices for healthy rice growth, prevention of common rice diseases, fertilization and water management for rice health.",
+              "documents": [
+                {
+                  "crop": "Rice",
+                  "disease": "Healthy"
+                },
+                {
+                  "crop": "Rice",
+                  "disease": "Leaf Blast"
+                },
+                {
+                  "crop": "Wheat",
+                  "disease": "Healthy"
+                },
+                {
+                  "crop": "Rice",
+                  "disease": "Bacterial Leaf Blight"
+                }
+              ]
+            }
+          ],
+          "image_summary": "The image displays a uniform, vibrant green color across the entire frame without any visible lesions, spots, or abnormalities.",
+          "timestamp": "2026-04-20T09:09:26.635176+00:00"
+        }
+      ],
+      "messages": []
+    },
+    "488af72c-6635-44c1-9a10-7db9932bedf0": {
+      "created_at": "2026-04-20T13:57:41.483932+00:00",
+      "updated_at": "2026-04-20T13:57:41.484398+00:00",
+      "diagnoses": [],
+      "messages": []
+    }
+  }
+}
