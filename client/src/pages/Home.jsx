@@ -13,18 +13,23 @@ const Home = () => {
     },
     {
       icon: <Brain className="h-8 w-8" />,
-      title: 'Model Analyzes',
-      description: 'CNN model processes the image'
+      title: 'Vision Model Analyzes',
+      description: 'Multimodal vision analysis reviews the image and symptoms'
     },
     {
       icon: <Database className="h-8 w-8" />,
-      title: 'AI Retrieves Info',
-      description: 'RAG system finds relevant data'
+      title: 'Agentic RAG Retrieves Info',
+      description: 'The assistant fetches targeted agronomy context in rounds'
+    },
+    {
+      icon: <CheckCircle className="h-8 w-8" />,
+      title: 'Memory Keeps Context',
+      description: 'Follow-up questions stay tied to the same diagnosis session'
     },
     {
       icon: <CheckCircle className="h-8 w-8" />,
       title: 'Get Results',
-      description: 'Receive diagnosis & treatment'
+      description: 'Receive diagnosis, reasoning, and treatment guidance'
     }
   ];
 
@@ -45,7 +50,7 @@ const Home = () => {
             RAG-Enabled Early Disease & Pest Detection in Crops
           </h1>
           <p className="text-xl md:text-2xl text-green-600 mb-12 max-w-4xl mx-auto">
-            Detect crop diseases & pests early using AI and get instant solutions
+            Detect crop diseases and pests early with multimodal AI, structured reasoning, and memory-aware advice
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center max-w-2xl mx-auto">
@@ -121,7 +126,7 @@ const Home = () => {
                 AI-Powered Detection
               </h3>
               <p className="text-gray-600">
-                Advanced CNN models trained on thousands of crop images for accurate disease identification
+                Vision analysis and crop classifiers work together to identify visible disease patterns and likely causes
               </p>
             </div>
             
@@ -133,7 +138,7 @@ const Home = () => {
                 RAG Technology
               </h3>
               <p className="text-gray-600">
-                Retrieval-Augmented Generation provides contextual treatment recommendations
+                Retrieval-Augmented Generation provides contextual treatment recommendations in multiple reasoning rounds
               </p>
             </div>
             
@@ -142,10 +147,10 @@ const Home = () => {
                 <CheckCircle className="h-6 w-6 text-blue-600" />
               </div>
               <h3 className="text-xl font-semibold text-green-800 mb-3">
-                Instant Results
+                Memory-Aware Follow-Up
               </h3>
               <p className="text-gray-600">
-                Get immediate diagnosis and treatment suggestions to save your crops
+                Ask follow-up questions about the same diagnosis without losing context
               </p>
             </div>
           </div>
